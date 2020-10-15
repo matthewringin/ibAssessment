@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+    <parameter name="Browser" value="Chrome-Mac"/>
+    <parameter name="Headless" value="false"/>
+
+    <parameter name="EnvironmentName" value="ringin"/>
+    <parameter name="BaseURL" value="https://intelligencebank.com"/>
+    <parameter name="SiteName" value="intelligencebank.com"/>
+    <parameter name="APIBaseURL" value="http://lbauv3.intelligencebank.com"/>
+    <parameter name="V2BaseURL" value="https://apiau.intelligencebank.com"/>
+    <parameter name="UploadFilePath" value="./src/test/resources/files/"/>
+    <parameter name="TemplateFilePath" value="./src/test/resources/files/"/>
+    <parameter name="PdfFile" value="408-ArticleText-2147-1-10-20130307.pdf"/>
+    <parameter name="VideoFile" value="TEST-ANIYA-PLC-1.19_20200131-0905_8hlaajzbuam3umda.trm"/>
+    <parameter name="LogsheetFile" value="TEST-ANIYA-PLC-1.19_20200131-0905_8hlaajzoakndne7z.fls"/>
+    <parameter name="AWSSourceDir" value="ANIYA"/>
+    <parameter name="MetadataFile" value="Aniya_20200109_TEST-ANIYA-PLC-1.19.json"/>
+    <parameter name ="RemoteConnector" value ="9854df3120644fb788c8d88dd7672a9d"/>
+    <parameter name="MongoServer" value="54.206.87.80"></parameter>
+    <parameter name="MongoDb" value="autoauone"></parameter>
+
+</suite>
