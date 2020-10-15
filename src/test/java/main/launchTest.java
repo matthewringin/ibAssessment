@@ -8,6 +8,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,9 +25,10 @@ public class launchTest {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
+    @Parameters ({ "baseURL" })
     @Test (priority=1)
-    public void openIB() {
-        driver.get("https://www.intelligencebank.com/");
+    public void openIB(String baseURL) {
+        driver.get(baseURL);
     }
 
     @Test (priority=2)
@@ -36,20 +38,21 @@ public class launchTest {
     }
 
     @Test (priority=3)
-    public void fillIn() {
-        driver.findElement(By.xpath("//input[@name='company']")).sendKeys("IntelligenceBank");
-        driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Matt");
-        driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Ringin");
-        driver.findElement(By.xpath("//input[@name='email']")).sendKeys("matthew.ringin@intelligencebank.com");
+    @Parameters ({ "company","firstName","lastName","email","country","phone","product","enquiry"})
+    public void fillIn(String company,String firstName,String lastName,String email,String country, String phone,String product,String enquiry) {
+        driver.findElement(By.xpath("//input[@name='company']")).sendKeys(company);
+        driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys(firstName);
+        driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys(lastName);
+        driver.findElement(By.xpath("//input[@name='email']")).sendKeys(email);
 
         Select dropdownCountry = new Select(driver.findElement(By.name("country")));
-        dropdownCountry.selectByValue("AU");
+        dropdownCountry.selectByValue(country);
 
-        driver.findElement(By.xpath("//input[@name='phone']")).sendKeys("0451 791 194");
-        driver.findElement(By.xpath("//textarea[@name='enquiry_details']")).sendKeys("Testing");
+        driver.findElement(By.xpath("//input[@name='phone']")).sendKeys(phone);
+        driver.findElement(By.xpath("//textarea[@name='enquiry_details']")).sendKeys(enquiry);
 
         Select dropdownProduct = new Select(driver.findElement(By.name("product_family")));
-        dropdownProduct.selectByValue("DAM");
+        dropdownProduct.selectByValue(product);
 
         driver.findElement(By.name("i_agree_to_intelligencebank_s_terms_and_conditions")).click();
     }

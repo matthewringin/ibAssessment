@@ -5,20 +5,21 @@
     <parameter name="Browser" value="Chrome-Mac"/>
     <parameter name="Headless" value="false"/>
 
-    <parameter name="EnvironmentName" value="ringin"/>
-    <parameter name="BaseURL" value="https://intelligencebank.com"/>
+    <parameter name="baseURL" value="https://www.intelligencebank.com/"/>
     <parameter name="SiteName" value="intelligencebank.com"/>
-    <parameter name="APIBaseURL" value="http://lbauv3.intelligencebank.com"/>
-    <parameter name="V2BaseURL" value="https://apiau.intelligencebank.com"/>
-    <parameter name="UploadFilePath" value="./src/test/resources/files/"/>
-    <parameter name="TemplateFilePath" value="./src/test/resources/files/"/>
-    <parameter name="PdfFile" value="408-ArticleText-2147-1-10-20130307.pdf"/>
-    <parameter name="VideoFile" value="TEST-ANIYA-PLC-1.19_20200131-0905_8hlaajzbuam3umda.trm"/>
-    <parameter name="LogsheetFile" value="TEST-ANIYA-PLC-1.19_20200131-0905_8hlaajzoakndne7z.fls"/>
-    <parameter name="AWSSourceDir" value="ANIYA"/>
-    <parameter name="MetadataFile" value="Aniya_20200109_TEST-ANIYA-PLC-1.19.json"/>
-    <parameter name ="RemoteConnector" value ="9854df3120644fb788c8d88dd7672a9d"/>
-    <parameter name="MongoServer" value="54.206.87.80"></parameter>
-    <parameter name="MongoDb" value="autoauone"></parameter>
+    <parameter name="company" value="Intelligencebank"/>
+    <parameter name="firstName" value="Matt"/>
+    <parameter name="lastName" value="Ringin"/>
+    <parameter name="email" value="matthew.ringin@intelligencebank.com"/>
+    <parameter name="phone" value="0451 791 194"/>
+    <parameter name="enquiry" value="Testing"/>
+    <parameter name="country" value="AU"/>
+    <parameter name="product" value="DAM"/>
+
+    <test name="Contact Us Tests">
+        <classes>
+            <class name="main.launchTest"/>
+        </classes>
+    </test>
 
 </suite>
