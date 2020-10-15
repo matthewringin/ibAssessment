@@ -1,6 +1,7 @@
 package main;
 
 import org.apache.commons.io.FileUtils;
+import org.testng.annotations.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -16,35 +17,26 @@ public class launchTest {
 
     static WebDriver driver;
 
-    String company = "intelligencebank";
-
-
-    public static void main(String[] args) throws IOException {
-        setBrowserConfig();
-        openIB();
-        contactPage();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        fillIn();
-        takeScreenshot();
-        exitBrowser();
-
-    }
-    public static void setBrowserConfig() {
+    @BeforeClass
+    public void setBrowserConfig() {
         System.setProperty("webdriver.chrome.driver","src/test/resources/drivers/chromedriver_mac");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
-    public static void openIB() {
+    @Test (priority=1)
+    public void openIB() {
         driver.get("https://www.intelligencebank.com/");
     }
 
-    public static void contactPage() {
+    @Test (priority=2)
+    public void contactPage() {
         driver.findElement(By.xpath("//a[@title='CONTACT US']")).click();
         driver.manage().window().maximize();
     }
 
-    public static void fillIn() {
+    @Test (priority=3)
+    public void fillIn() {
         driver.findElement(By.xpath("//input[@name='company']")).sendKeys("IntelligenceBank");
         driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Matt");
         driver.findElement(By.xpath("//input[@name='lastname']")).sendKeys("Ringin");
@@ -62,11 +54,13 @@ public class launchTest {
         driver.findElement(By.name("i_agree_to_intelligencebank_s_terms_and_conditions")).click();
     }
 
-    public static void takeScreenshot () throws IOException {
+    @Test (priority=4)
+    public void takeScreenshot () throws IOException {
         File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrFile, new File("src/test/resources/screenshots/screenshot.png"));
     }
 
+    @AfterClass
     public static void exitBrowser() {
         driver.quit();
     }
