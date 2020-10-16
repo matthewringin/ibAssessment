@@ -16,10 +16,13 @@
     <parameter name="country" value="AU"/>
     <parameter name="product" value="DAM"/>
 
-    <test name="Contact Us Tests">
+    <test name="Set up driver">
         <classes>
-            <class name="main.launchTest"/>
+            <class name="main.testConfig"/>
+            <class name="main.homePage"/>
+            <class name="main.contactPage"/>
         </classes>
     </test>
+
 
 </suite>
