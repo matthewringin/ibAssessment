@@ -4,50 +4,213 @@ formatter.feature({
   "description": "  As a user\n  I want to fill in my details in the contact us page\n  So I can submit my query to Intelligencebank",
   "keyword": "Feature"
 });
+formatter.scenarioOutline({
+  "name": "Test fields with valid information",
+  "description": "",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "name": "I open \u0027https://www.intelligencebank.com/\u0027",
+  "keyword": "Given "
+});
+formatter.step({
+  "name": "I navigate to the \u0027CONTACT US\u0027 page",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I type \u0027\u003ccompany\u003e\u0027 into the company field",
+  "keyword": "When "
+});
+formatter.step({
+  "name": "I type \u0027\u003cfirstName\u003e\u0027 into the first name field",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I type \u0027\u003clastName\u003e\u0027 into the last name field",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I type \u0027\u003cemail\u003e\u0027 into the email field",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I select \u0027\u003ccountry\u003e\u0027 in the country selector",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I type \u0027\u003cphone\u003e\u0027 into the phone field",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I type \u0027\u003cenquiry\u003e\u0027 into the enquiry field",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I select \u0027\u003cproduct\u003e\u0027 in the product selector",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I click the checkbox",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "I should take a screenshot to confirm and close the site",
+  "keyword": "Then "
+});
+formatter.examples({
+  "name": "",
+  "description": "",
+  "keyword": "Examples",
+  "rows": [
+    {
+      "cells": [
+        "company",
+        "firstName",
+        "lastName",
+        "email",
+        "country",
+        "phone",
+        "enquiry",
+        "product"
+      ]
+    },
+    {
+      "cells": [
+        "IB",
+        "Matt",
+        "Ringin",
+        "matthew.ringin@intelligencebank.com",
+        "AU",
+        "0451791194",
+        "Please help",
+        "DAM"
+      ]
+    }
+  ]
+});
 formatter.scenario({
   "name": "Test fields with valid information",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "name": "I open \"baseURL\"",
+  "name": "I open \u0027https://www.intelligencebank.com/\u0027",
   "keyword": "Given "
 });
 formatter.match({
   "location": "Steps.i_open_the_site(String)"
 });
 formatter.result({
-  "error_message": "org.openqa.selenium.InvalidArgumentException: invalid argument\n  (Session info: chrome\u003d86.0.4240.80)\nBuild info: version: \u00273.141.59\u0027, revision: \u0027e82be7d358\u0027, time: \u00272018-11-14T08:17:03\u0027\nSystem info: host: \u0027Matto.local\u0027, ip: \u0027fe80:0:0:0:1c48:69a4:8e70:7e88%en0\u0027, os.name: \u0027Mac OS X\u0027, os.arch: \u0027x86_64\u0027, os.version: \u002710.15.7\u0027, java.version: \u002713.0.2\u0027\nDriver info: org.openqa.selenium.chrome.ChromeDriver\nCapabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 86.0.4240.80, chrome: {chromedriverVersion: 86.0.4240.22 (398b0743353ff..., userDataDir: /var/folders/ml/87dw5y4j20j...}, goog:chromeOptions: {debuggerAddress: localhost:62403}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}\nSession ID: 7ce2946ede638cf9f3ae2ad80a67c38b\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)\n\tat java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)\n\tat java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)\n\tat java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)\n\tat java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)\n\tat org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)\n\tat org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)\n\tat org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)\n\tat org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)\n\tat org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:277)\n\tat stepDefinitions.Steps.i_open_the_site(Steps.java:28)\n\tat ✽.I open \"baseURL\"(file:src/test/java/features/goToContactPage.feature:7)\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
-  "name": "I navigate to the Contact Us page",
+  "name": "I navigate to the \u0027CONTACT US\u0027 page",
   "keyword": "And "
 });
 formatter.match({
-  "location": "Steps.user_opens_contactPage()"
+  "location": "Steps.user_opens_contactPage(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "I fill in the form fields",
+  "name": "I type \u0027IB\u0027 into the company field",
   "keyword": "When "
 });
 formatter.match({
-  "location": "Steps.user_fills_in_fields()"
+  "location": "Steps.user_fills_in_company_fields(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "I should take a screenshot to confirm",
+  "name": "I type \u0027Matt\u0027 into the first name field",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Steps.user_fills_in_first_name_field(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I type \u0027Ringin\u0027 into the last name field",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Steps.user_fills_in_last_name_field(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I type \u0027matthew.ringin@intelligencebank.com\u0027 into the email field",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Steps.user_fills_in_email_field(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I select \u0027AU\u0027 in the country selector",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Steps.user_selects_country_in_country_selector(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I type \u00270451791194\u0027 into the phone field",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Steps.user_fills_in_phone_field(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I type \u0027Please help\u0027 into the enquiry field",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Steps.user_fills_in_enquiry_field(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I select \u0027DAM\u0027 in the product selector",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Steps.user_selects_product_in_product_selector(String)"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I click the checkbox",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "Steps.user_clicks_the_checkbox()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "I should take a screenshot to confirm and close the site",
   "keyword": "Then "
 });
 formatter.match({
   "location": "Steps.user_takes_screenshot()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 });
