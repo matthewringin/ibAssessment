@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 public class homePage extends testConfig {
 
+    @Parameters ({ "baseURL" })
     public static void openIB(String baseURL) {
         driver.get(baseURL);
     }
